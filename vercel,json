@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    {
+      "source": "/home",
+      "destination": "/"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/old-contact",
+      "destination": "/contact",
+      "permanent": true
+    }
+  ]
+}
