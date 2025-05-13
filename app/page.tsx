@@ -1,30 +1,20 @@
+export default function Home() {
+  // Read environment variable for the site name
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Default Site";
 
-import Link from "next/link";
-
-export default function HomePage() {
   return (
-    <div className="p-10 max-w-4xl mx-auto space-y-10">
+    <main className="min-h-screen bg-black text-white p-8">
+      <h1 className="text-4xl font-bold mb-4">Welcome to {siteName}</h1>
+      <p className="text-lg text-gray-300 mb-8">
+        Manage building announcements, levies, meetings, and requests all in one place.
+      </p>
 
-      {/* 🔗 Navigation Bar */}
-      <nav className="flex flex-wrap gap-6 justify-center text-blue-600 underline text-lg">
-        <Link href="/">Home</Link>
-        <Link href="/announcements">Announcements</Link>
-        <Link href="/contact">Contact</Link>
-        <Link href="/levies">Levies</Link>
-        <Link href="/meetings">Meetings</Link>
+      <nav className="flex flex-col gap-2">
+        <a href="/announcements" className="text-blue-400 hover:underline">Announcements</a>
+        <a href="/contact" className="text-blue-400 hover:underline">Contact</a>
+        <a href="/levies" className="text-blue-400 hover:underline">Levies</a>
+        <a href="/meetings" className="text-blue-400 hover:underline">Meetings</a>
       </nav>
-
-      {/* 🏠 Homepage Content */}
-      <section className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Strata Manager</h1>
-        <p className="text-gray-700 text-lg">
-          Your platform for managing building announcements, resident queries, levy payments, and meeting schedules.
-        </p>
-      </section>
-      
-    </div>
+    </main>
   );
 }
-
-
-
